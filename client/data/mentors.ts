@@ -76,7 +76,7 @@ export const mentors: Mentor[] = [
     role: "Flight Attendant",
     company: "Air India",
     years: 4,
-    price: 29,
+    price: 49,
     rating: 4.7,
     online: false,
     languages: ["English", "Hindi"],
