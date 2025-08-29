@@ -120,28 +120,27 @@ export default function Index() {
             </div>
           </div>
           <div className="relative">
-            <div className="rounded-2xl border bg-white p-4  shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
-              <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-primary/15 via-white to-primary/10 grid place-items-center">
-                <div className="text-center">
-                  <p className="text-sm text-muted-foreground">MVP call flow</p>
-                  <p className="font-semibold">Calendly → Zoom/Meet</p>
-                </div>
-              </div>
-              <div className="mt-4 grid grid-cols-3 gap-3">
-                <div className="rounded-lg bg-success/10 p-3 text-center">
-                  <p className="text-xs text-muted-foreground">Step 1</p>
-                  <p className="font-medium">Choose Mentor</p>
-                </div>
-                <div className="rounded-lg bg-primary/10 p-3 text-center">
-                  <p className="text-xs text-muted-foreground">Step 2</p>
-                  <p className="font-medium">Book & Pay</p>
-                </div>
-                <div className="rounded-lg bg-warning/10 p-3 text-center">
-                  <p className="text-xs text-muted-foreground">Step 3</p>
-                  <p className="font-medium">Get Roadmap</p>
-                </div>
-              </div>
+            <div className="rounded-2xl border overflow-hidden shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
+              <img src="/placeholder.svg" alt="Guided mentorship" className="aspect-video w-full object-cover" />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Steps */}
+      <section className="container py-12 md:py-16">
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <div className="rounded-lg bg-success/10 p-4 text-center">
+            <p className="text-xs text-muted-foreground">Step 1</p>
+            <p className="font-medium">Choose Mentor</p>
+          </div>
+          <div className="rounded-lg bg-primary/10 p-4 text-center">
+            <p className="text-xs text-muted-foreground">Step 2</p>
+            <p className="font-medium">Book & Pay</p>
+          </div>
+          <div className="rounded-lg bg-warning/10 p-4 text-center">
+            <p className="text-xs text-muted-foreground">Step 3</p>
+            <p className="font-medium">Get Roadmap</p>
           </div>
         </div>
       </section>
