@@ -34,10 +34,10 @@
     --accent: 320 40% 96%;
     --accent-foreground: 320 50% 30%;
 
-    --success: 134 61% 41%; /* #28A745 */
+    --success: 133 45% 35%; /* scallion green */
     --success-foreground: 0 0% 100%;
 
-    --warning: 45 100% 51%; /* #FFC107 */
+    --warning: 38 100% 52%; /* warm amber */
     --warning-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
