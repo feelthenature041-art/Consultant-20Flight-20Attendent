@@ -10,7 +10,8 @@ export type Mentor = {
   languages: string[];
   gender: "Male" | "Female" | "Other";
   tags: string[];
-  img?: string;
+  img?: string; // avatar
+  cover?: string; // banner image
   bio: string;
   specialties: string[];
   outcomes: string[];
@@ -32,7 +33,8 @@ export const mentors: Mentor[] = [
     languages: ["English", "Hindi"],
     gender: "Female",
     tags: ["Cabin Crew", "Interview", "Grooming"],
-    img: "/placeholder.svg",
+    img: "https://images.pexels.com/photos/17694889/pexels-photo-17694889.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    cover: "https://images.pexels.com/photos/17694889/pexels-photo-17694889.jpeg?auto=compress&cs=tinysrgb&w=1600",
     bio: "Senior cabin crew with long-haul experience across EU/ME routes. I help aspiring flight attendants prepare interviews and onboard grooming.",
     specialties: ["Interview drills", "Customer service scenarios", "Image & grooming"],
     outcomes: ["Roadmap PDF after call", "Interview question bank", "Checklist for medical & docs"],
@@ -59,7 +61,8 @@ export const mentors: Mentor[] = [
     languages: ["English", "Hindi"],
     gender: "Male",
     tags: ["Interview Prep", "Service Excellence", "Resume"],
-    img: undefined,
+    img: "https://images.pexels.com/photos/5778301/pexels-photo-5778301.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    cover: "https://images.pexels.com/photos/5778301/pexels-photo-5778301.jpeg?auto=compress&cs=tinysrgb&w=1600",
     bio: "Trainer for domestic and international crew. Focus on interview performance and service excellence.",
     specialties: ["Assessment day coaching", "Resume review", "Onboard etiquette"],
     outcomes: ["Personalized prep plan", "Mock interview feedback"],
@@ -79,7 +82,8 @@ export const mentors: Mentor[] = [
     languages: ["English", "Hindi"],
     gender: "Female",
     tags: ["International Routes", "English Skills"],
-    img: undefined,
+    img: "https://images.pexels.com/photos/32829123/pexels-photo-32829123.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    cover: "https://images.pexels.com/photos/32829123/pexels-photo-32829123.jpeg?auto=compress&cs=tinysrgb&w=1600",
     bio: "International routes experience. I help with English polish and real cabin scenarios.",
     specialties: ["English improvement", "Cabin safety basics"],
     outcomes: ["Practice scripts", "Role-play scenarios"],
@@ -99,7 +103,8 @@ export const mentors: Mentor[] = [
     languages: ["English"],
     gender: "Male",
     tags: ["Leadership", "Cabin Safety", "Career Roadmap"],
-    img: undefined,
+    img: "https://images.pexels.com/photos/32829123/pexels-photo-32829123.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
+    cover: "https://images.pexels.com/photos/32829123/pexels-photo-32829123.jpeg?auto=compress&cs=tinysrgb&w=1600",
     bio: "Purser focused on leadership and safety culture. Ideal for experienced candidates moving up.",
     specialties: ["Leadership path", "Safety SOPs"],
     outcomes: ["Promotion plan", "Study references"],
