@@ -17,7 +17,7 @@ const mentors = [
     rating: 4.9,
     years: 8,
     online: true,
-    img: "/public/placeholder.svg",
+    img: "/placeholder.svg",
   },
   {
     name: "Rohit Verma",
