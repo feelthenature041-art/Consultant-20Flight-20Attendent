@@ -128,7 +128,7 @@ export default function Index() {
             </div>
           </div>
           <div className="relative">
-            <div className="rounded-2xl border bg-white p-4 shadow-lg/50 shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
+            <div className="rounded-2xl border bg-white p-4  shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
               <div className="aspect-video w-full rounded-xl bg-gradient-to-br from-primary/15 via-white to-primary/10 grid place-items-center">
                 <div className="text-center">
                   <p className="text-sm text-muted-foreground">MVP call flow</p>
