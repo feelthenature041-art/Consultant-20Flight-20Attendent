@@ -47,6 +47,23 @@ export default function Mentors() {
         <div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Find a Flight Attendant Mentor</h1>
           <p className="text-muted-foreground">Filters apply to the cabin-crew category only.</p>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs">
+            <Badge onClick={() => setAvailability("online")} className="cursor-pointer">Available now</Badge>
+            <Badge onClick={() => setMinRating(4.5)} className="cursor-pointer">4.5★+</Badge>
+            <Badge onClick={() => setMaxPrice(50)} className="cursor-pointer">Budget ₹≤50</Badge>
+            <Badge variant="secondary" className="cursor-pointer" onClick={() => { setAvailability("any"); setMinRating(0); setMaxPrice(100); }}>Reset</Badge>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-muted-foreground">Sort</span>
+          <Select value={sort} onValueChange={setSort}>
+            <SelectTrigger className="w-40"><SelectValue /></SelectTrigger>
+            <SelectContent>
+              <SelectItem value="top">Top rated</SelectItem>
+              <SelectItem value="price-asc">Price: Low to High</SelectItem>
+              <SelectItem value="exp-desc">Experience: High to Low</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
