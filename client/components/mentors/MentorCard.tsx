@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -6,8 +7,13 @@ import { Link } from "react-router-dom";
 import { Stars } from "@/components/Stars";
 import { Mentor } from "@/data/mentors";
 import { BadgeCheck } from "lucide-react";
+import { RechargeDialog } from "@/components/wallet/RechargeDialog";
 
 export function MentorCard({ m }: { m: Mentor }) {
+  const [promptOpen, setPromptOpen] = useState(false);
+  const [intent, setIntent] = useState<"chat" | "call" | null>(null);
+  const onChat = () => { setIntent("chat"); setPromptOpen(true); };
+  const onCall = () => { setIntent("call"); setPromptOpen(true); };
   return (
     <div className="group relative transition-transform duration-200 hover:-translate-y-0.5">
       <Card className="overflow-hidden">
@@ -47,13 +53,14 @@ export function MentorCard({ m }: { m: Mentor }) {
         <Button asChild size="sm" variant="secondary" className="pointer-events-auto">
           <Link to={`/mentor/${m.id}`}>View Profile</Link>
         </Button>
-        <Button asChild size="sm" className="pointer-events-auto">
-          <Link to={`/mentor/${m.id}?chat=teaser`}>Chat</Link>
+        <Button size="sm" className="pointer-events-auto" onClick={onChat}>
+          Chat
         </Button>
-        <Button asChild size="sm" className="pointer-events-auto">
-          <Link to={`/contact?mentor=${m.id}&duration=30`}>Book Call</Link>
+        <Button size="sm" className="pointer-events-auto" onClick={onCall}>
+          Book Call
         </Button>
       </div>
+      <RechargeDialog open={promptOpen} onOpenChange={setPromptOpen} intent={intent} />
     </div>
   );
 }
