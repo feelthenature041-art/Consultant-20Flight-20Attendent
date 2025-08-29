@@ -10,42 +10,42 @@ import { DemoResponse } from "@shared/api";
 
 const mentors = [
   {
-    name: "Aisha Khan",
-    role: "Product Manager @ Spotify",
-    tags: ["PM", "Roadmaps", "Interview Prep"],
-    price: 49,
-    rating: 4.9,
-    years: 8,
+    name: "Meera Iyer",
+    role: "Senior Cabin Crew @ Emirates",
+    tags: ["Cabin Crew", "Interview", "Grooming"],
+    price: 39,
+    rating: 4.8,
+    years: 6,
     online: true,
     img: "/placeholder.svg",
   },
   {
-    name: "Rohit Verma",
-    role: "Senior Data Scientist @ Google",
-    tags: ["Data", "ML", "Resume"],
-    price: 59,
-    rating: 4.8,
-    years: 10,
-    online: false,
-    img: undefined,
-  },
-  {
-    name: "Meera Iyer",
-    role: "Cabin Crew Lead @ Emirates",
-    tags: ["Cabin Crew", "Interview", "Grooming"],
-    price: 39,
-    rating: 4.7,
-    years: 6,
+    name: "Arjun Malhotra",
+    role: "Cabin Crew Trainer @ IndiGo",
+    tags: ["Interview Prep", "Service Excellence", "Resume"],
+    price: 49,
+    rating: 4.9,
+    years: 9,
     online: true,
     img: undefined,
   },
   {
-    name: "David Chen",
-    role: "Software Engineer @ Stripe",
-    tags: ["Frontend", "System Design", "Offers"],
+    name: "Sara Khan",
+    role: "Flight Attendant @ Air India",
+    tags: ["Cabin Crew", "International Routes", "English Skills"],
+    price: 29,
+    rating: 4.7,
+    years: 4,
+    online: false,
+    img: undefined,
+  },
+  {
+    name: "Daniel Lee",
+    role: "Purser @ Singapore Airlines",
+    tags: ["Leadership", "Cabin Safety", "Career Roadmap"],
     price: 69,
     rating: 4.9,
-    years: 9,
+    years: 11,
     online: true,
     img: undefined,
   },
@@ -111,7 +111,7 @@ export default function Index() {
               Talk to professionals. Get your roadmap.
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
-              Real professionals. Real guidance. Real careers. Chat with mentors, book paid 1:1 calls, and leave with an actionable plan.
+              Real professionals. Real guidance. Real careers. Chat with flight attendant mentors, book paid 1:1 calls, and leave with an actionable plan.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild size="lg" data-analytics="cta_hero_browse">
@@ -192,7 +192,7 @@ export default function Index() {
         <div className="container">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Mentors</h2>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Flight Attendant Mentors</h2>
               <p className="text-muted-foreground">Handpicked experts ready to help.</p>
             </div>
             <Button asChild variant="ghost" className="hidden md:inline-flex">
