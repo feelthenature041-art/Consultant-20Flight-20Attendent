@@ -8,7 +8,12 @@ import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Stars } from "@/components/Stars";
 import { DemoResponse } from "@shared/api";
+import { mentors as DATA } from "@/data/mentors";
+import { MentorCard } from "@/components/mentors/MentorCard";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
+/* homepage local sample mentors kept earlier is no longer needed */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const mentors = [
   {
     name: "Meera Iyer",
@@ -207,50 +212,17 @@ export default function Index() {
               <Link to="/mentors">View all <ArrowRight className="ml-1 size-4" /></Link>
             </Button>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {mentors.slice(0, 4).map((m) => (
-              <div key={m.name} className="group relative">
-                <Card className="overflow-hidden">
-                  <CardContent className="p-5">
-                    <div className="flex items-center gap-3">
-                      <Avatar className="size-12">
-                        {m.img && <AvatarImage src={m.img} alt={m.name} />}
-                        <AvatarFallback>{m.name.split(" ").map((n) => n[0]).join("")}</AvatarFallback>
-                      </Avatar>
-                      <div className="min-w-0">
-                        <p className="font-semibold truncate">{m.name}</p>
-                        <p className="text-xs text-muted-foreground truncate">{m.role}</p>
-                      </div>
-                    </div>
-                    <div className="mt-3 flex items-center justify-between text-sm">
-                      <div className="flex items-center gap-2"><Stars value={m.rating} /><span className="text-muted-foreground">{m.rating.toFixed(1)}</span></div>
-                      <div className={cn("flex items-center gap-2", m.online ? "text-success" : "text-muted-foreground")}>● <span>{m.online ? "Online" : "Offline"}</span></div>
-                    </div>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {m.tags.map((t) => (
-                        <Badge key={t} variant="secondary" className="rounded-full">{t}</Badge>
-                      ))}
-                    </div>
-                    <div className="mt-4 flex items-center justify-between">
-                      <p className="text-sm"><span className="font-semibold">₹{m.price}</span> / 30m</p>
-                      <p className="text-xs text-muted-foreground">{m.years} yrs exp</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                <div className="pointer-events-none absolute inset-0 flex items-end justify-center gap-2 bg-black/0 p-4 opacity-0 transition-all group-hover:pointer-events-auto group-hover:bg-black/40 group-hover:opacity-100">
-                  <Button asChild size="sm" variant="secondary" className="pointer-events-auto">
-                    <Link to="/mentors">View Profile</Link>
-                  </Button>
-                  <Button asChild size="sm" className="pointer-events-auto">
-                    <Link to="/mentors">Chat</Link>
-                  </Button>
-                  <Button asChild size="sm" className="pointer-events-auto">
-                    <Link to="/contact">Book Call</Link>
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Carousel opts={{ align: "start" }}>
+            <CarouselContent>
+              {DATA.map((m) => (
+                <CarouselItem key={m.id} className="md:basis-1/2 lg:basis-1/3">
+                  <MentorCard m={m} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
       </section>
 
