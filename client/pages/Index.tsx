@@ -110,7 +110,7 @@ export default function Index() {
       {/* Hero */}
       <section className="relative">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(138,44,107,0.25),transparent_60%)]" />
-        <div className="container grid gap-10 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
+        <div className="container grid items-center gap-10 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
               <BadgeCheck className="size-3.5" /> Mentors verified by Guided
@@ -138,9 +138,9 @@ export default function Index() {
             </div>
           </div>
           <div className="relative">
-            <div className="relative mx-auto max-w-md sm:max-w-lg">
+            <div className="relative mx-auto max-w-[260px] sm:max-w-sm md:max-w-md">
               <div className="absolute inset-0 -z-10 grid place-items-center">
-                <div className="h-56 w-56 sm:h-72 sm:w-72 lg:h-80 lg:w-80 rounded-full bg-primary/20 ring-8 ring-white/80 shadow-inner" />
+                <div className="h-40 w-40 sm:h-48 sm:w-48 md:h-56 md:w-56 rounded-full bg-primary/20 ring-6 ring-white/80 shadow-inner" />
               </div>
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2F728d0307159d4db0b6c1744ba0b9e3d6%2Ff83940476bf04bd08c6032b9114d3885?format=webp&width=800"
