@@ -113,11 +113,6 @@ export default function Index() {
                 <Link to="/contact">Book a Session</Link>
               </Button>
             </div>
-            <div className="mt-6 flex items-center gap-4 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2"><Stars value={5} /> <span>Trusted by 1,000+ seekers</span></div>
-              <div className="hidden md:block">•</div>
-              <div className="hidden md:flex items-center gap-2"><Badge variant="secondary">Refunds</Badge> <span>Policy-backed</span></div>
-            </div>
           </div>
           <div className="relative">
             <div className="rounded-2xl border overflow-hidden shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
