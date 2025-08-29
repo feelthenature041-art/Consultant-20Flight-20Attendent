@@ -1,29 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, Wallet } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
-import { useWallet } from "@/hooks/use-wallet";
 
 const nav = [
   { to: "/", label: "Home" },
   { to: "/mentors", label: "Mentors" },
   { to: "/how-it-works", label: "How it Works" },
-  { to: "/pricing", label: "Wallet" },
+  { to: "/pricing", label: "Balance" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact/Book" },
 ];
-
-function WalletButton() {
-  const { balance } = useWallet();
-  return (
-    <Button asChild variant="secondary">
-      <Link to="/pricing" aria-label="Wallet">
-        <Wallet className="mr-2 size-4" /> Wallet ₹{balance}
-      </Link>
-    </Button>
-  );
-}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -53,7 +41,6 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-3">
-          <WalletButton />
           <Button asChild variant="ghost" className="hidden lg:inline-flex">
             <Link to="/mentors">Browse Mentors</Link>
           </Button>
