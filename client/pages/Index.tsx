@@ -123,8 +123,8 @@ export default function Index() {
             <div className="rounded-2xl border overflow-hidden shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
               <div className="relative aspect-video w-full overflow-hidden">
                 <img
-                  src="https://images.pexels.com/photos/17694889/pexels-photo-17694889.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                  alt="Flight attendant smiling in airplane cabin"
+                  src="https://images.pexels.com/photos/5778230/pexels-photo-5778230.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                  alt="Female flight attendant in uniform inside airplane cabin"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/20 to-primary/20" />
