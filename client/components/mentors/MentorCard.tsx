@@ -5,23 +5,38 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Stars } from "@/components/Stars";
 import { Mentor } from "@/data/mentors";
+import { BadgeCheck } from "lucide-react";
 
 export function MentorCard({ m }: { m: Mentor }) {
   return (
-    <div className="group relative">
+    <div className="group relative transition-transform duration-200 hover:-translate-y-0.5">
       <Card className="overflow-hidden">
-        <CardContent className="p-5">
-          <div className="flex items-center gap-3">
-            <Avatar className="size-12">
+        {/* Cover */}
+        <div className="relative aspect-[3/2] w-full overflow-hidden">
+          {m.cover ? (
+            <img src={m.cover} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-white to-primary/10" />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+          <div className="absolute left-4 top-4 inline-flex items-center gap-1 rounded-full bg-white/85 px-2 py-1 text-xs shadow">
+            <BadgeCheck className="size-3 text-success" /> Verified
+          </div>
+          <div className="absolute right-4 top-4 rounded-full bg-white/85 px-2 py-1 text-xs shadow">₹{m.price}/30m</div>
+          <div className="absolute -bottom-6 left-4 flex items-center gap-3">
+            <Avatar className="size-12 ring-2 ring-white">
               {m.img && <AvatarImage src={m.img} alt={m.name} />}
               <AvatarFallback>{m.name.split(" ").map((n) => n[0]).join("")}</AvatarFallback>
             </Avatar>
-            <div className="min-w-0">
-              <p className="font-semibold truncate">{m.name}</p>
-              <p className="text-xs text-muted-foreground truncate">{m.role} {m.company ? `@ ${m.company}` : ""}</p>
+            <div className="text-white drop-shadow">
+              <p className="font-semibold leading-none">{m.name}</p>
+              <p className="mt-0.5 text-[11px] opacity-90">{m.role} {m.company ? `@ ${m.company}` : ""}</p>
             </div>
           </div>
-          <div className="mt-3 flex items-center justify-between text-sm">
+        </div>
+
+        <CardContent className="p-5 pt-8">
+          <div className="mt-2 flex items-center justify-between text-sm">
             <div className="flex items-center gap-2"><Stars value={m.rating} /><span className="text-muted-foreground">{m.rating.toFixed(1)}</span></div>
             <div className={"flex items-center gap-2 " + (m.online ? "text-success" : "text-muted-foreground")}>● <span>{m.online ? "Online" : "Offline"}</span></div>
           </div>
@@ -30,9 +45,9 @@ export function MentorCard({ m }: { m: Mentor }) {
               <Badge key={t} variant="secondary" className="rounded-full">{t}</Badge>
             ))}
           </div>
-          <div className="mt-4 flex items-center justify-between">
-            <p className="text-sm"><span className="font-semibold">₹{m.price}</span> / 30m</p>
-            <p className="text-xs text-muted-foreground">{m.years} yrs exp</p>
+          <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+            <span>Languages: {m.languages.join(", ")}</span>
+            <span>{m.years} yrs exp</span>
           </div>
         </CardContent>
       </Card>
