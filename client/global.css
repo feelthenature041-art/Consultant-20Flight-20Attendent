@@ -21,8 +21,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Guided brand */
-    --primary: 212 72% 59%; /* #4A90E2 */
+    /* Guided brand - Onion palette */
+    --primary: 320 48% 45%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
