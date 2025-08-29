@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Star, BadgeCheck, Wallet, Route, ArrowRight } from "lucide-react";
+import { Star as StarIcon, BadgeCheck, Wallet, Route, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { Stars } from "@/components/Stars";
 import { DemoResponse } from "@shared/api";
 
 const mentors = [
@@ -72,15 +73,6 @@ const testimonials = [
   },
 ];
 
-function Stars({ value }: { value: number }) {
-  return (
-    <div className="flex items-center gap-0.5 text-warning" aria-label={`${value} star rating`}>
-      {Array.from({ length: 5 }).map((_, i) => (
-        <Star key={i} className={cn("size-4", i < Math.round(value) ? "fill-current" : "opacity-40")} />
-      ))}
-    </div>
-  );
-}
 
 export default function Index() {
   const [exampleFromServer, setExampleFromServer] = useState("");
@@ -254,7 +246,7 @@ export default function Index() {
             <Card key={i} className="p-6">
               <div className="flex items-center gap-2 text-warning">
                 {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="size-4 fill-current" />
+                  <StarIcon key={j} className="size-4 fill-current" />
                 ))}
               </div>
               <p className="mt-4 text-sm text-muted-foreground">“{t.quote}”</p>
