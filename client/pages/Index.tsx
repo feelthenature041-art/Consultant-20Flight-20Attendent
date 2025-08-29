@@ -98,7 +98,7 @@ export default function Index() {
     <div className="bg-white">
       {/* Hero */}
       <section className="relative">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(74,144,226,0.25),transparent_60%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(138,44,107,0.25),transparent_60%)]" />
         <div className="container grid gap-10 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
