@@ -121,7 +121,23 @@ export default function Index() {
           </div>
           <div className="relative">
             <div className="rounded-2xl border overflow-hidden shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
-              <img src="/placeholder.svg" alt="Guided mentorship" className="aspect-video w-full object-cover" />
+              <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-primary/15 via-white to-primary/10">
+                <div className="pointer-events-none absolute -left-10 top-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl opacity-40 [animation:float_8s_ease-in-out_infinite]" />
+                <div className="pointer-events-none absolute -right-8 bottom-8 h-36 w-36 rounded-full bg-warning/40 blur-3xl opacity-40 [animation:float_10s_ease-in-out_infinite]" style={{animationDelay: '1s'}} />
+                <svg aria-hidden className="absolute inset-0 m-auto size-[140%] -translate-x-[20%] text-primary/20 [animation:rotate-slow_40s_linear_infinite]" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.4">
+                  <circle cx="100" cy="100" r="30" />
+                  <circle cx="100" cy="100" r="60" />
+                  <circle cx="100" cy="100" r="90" />
+                  <line x1="0" y1="100" x2="200" y2="100" />
+                  <line x1="100" y1="0" x2="100" y2="200" />
+                </svg>
+                <div className="absolute inset-0 grid place-items-center">
+                  <div className="grid place-items-center rounded-full border bg-white/70 p-6 shadow-sm backdrop-blur">
+                    <div className="text-3xl">✈️</div>
+                    <p className="mt-2 text-xs text-muted-foreground [animation:pulse-soft_3s_ease-in-out_infinite]">Career GPS for cabin crew</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
