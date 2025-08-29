@@ -28,7 +28,7 @@ export default function Mentors() {
   };
 
   const filtered = useMemo(() => {
-    return DATA.filter((m) => {
+    let list = DATA.filter((m) => {
       const hay = `${m.name} ${m.role} ${m.company ?? ""} ${m.tags.join(" ")}`.toLowerCase();
       if (q && !hay.includes(q.toLowerCase())) return false;
       if (m.price > maxPrice) return false;
@@ -39,7 +39,18 @@ export default function Mentors() {
       if (m.rating < minRating) return false;
       return true;
     });
-  }, [q, maxPrice, minYears, availability, language, gender, minRating]);
+    switch (sort) {
+      case "price-asc":
+        list = list.sort((a, b) => a.price - b.price);
+        break;
+      case "exp-desc":
+        list = list.sort((a, b) => b.years - a.years);
+        break;
+      default:
+        list = list.sort((a, b) => b.rating - a.rating);
+    }
+    return list;
+  }, [q, maxPrice, minYears, availability, language, gender, minRating, sort]);
 
   return (
     <section className="container py-10 md:py-16">
