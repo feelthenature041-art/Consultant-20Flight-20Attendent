@@ -1,7 +1,44 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useWallet } from "@/hooks/use-wallet";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
+
+function WalletSection() {
+  const { balance, addFunds } = useWallet();
+  const [custom, setCustom] = useState(499);
+  const add = (amt: number) => () => addFunds(amt);
+  return (
+    <div className="mt-6 grid gap-6 md:grid-cols-2">
+      <Card>
+        <CardContent className="p-6">
+          <h3 className="text-xl font-semibold">Your Wallet</h3>
+          <p className="text-3xl font-bold mt-2">₹{balance}</p>
+          <p className="text-sm text-muted-foreground mt-2">Funds are used to book mentor calls. Session fees are deducted from your wallet.</p>
+          <Button asChild className="mt-6 w-full"><Link to="/mentors">Browse mentors</Link></Button>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardContent className="p-6 space-y-4">
+          <h3 className="text-xl font-semibold">Recharge</h3>
+          <div className="grid grid-cols-3 gap-2">
+            {[199, 499, 999].map((v) => (
+              <Button key={v} variant="secondary" onClick={add(v)}>+ ₹{v}</Button>
+            ))}
+          </div>
+          <div className="flex items-center gap-2">
+            <Input type="number" min={1} value={custom} onChange={(e) => setCustom(Number(e.target.value))} className="[appearance:textfield]" />
+            <Button onClick={() => addFunds(custom)}>Add Funds</Button>
+          </div>
+          <p className="text-xs text-muted-foreground">Tip: Recharge once, then book instantly without repeated checkout.</p>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
 
 export default function HowItWorks() {
   return (
@@ -14,8 +51,8 @@ export default function HowItWorks() {
         </CardContent></Card>
         <Card><CardContent className="p-6 text-center space-y-2">
           <div className="mx-auto size-10 rounded-lg bg-primary/10 grid place-items-center">2</div>
-          <h3 className="font-semibold">Book & Pay</h3>
-          <p className="text-sm text-muted-foreground">Secure checkout. Instant confirmation.</p>
+          <h3 className="font-semibold">Recharge Wallet</h3>
+          <p className="text-sm text-muted-foreground">Add funds, then book instantly.</p>
         </CardContent></Card>
         <Card><CardContent className="p-6 text-center space-y-2">
           <div className="mx-auto size-10 rounded-lg bg-warning/10 grid place-items-center">3</div>
@@ -25,33 +62,8 @@ export default function HowItWorks() {
       </div>
 
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Pricing</h2>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold">Starter</h3>
-              <p className="text-3xl font-bold mt-2">₹499<span className="text-sm text-muted-foreground"> / 30m</span></p>
-              <ul className="mt-4 space-y-1 text-sm text-muted-foreground">
-                <li>Chat teaser unlock</li>
-                <li>Roadmap highlights</li>
-                <li>Follow-up tips</li>
-              </ul>
-              <Button asChild className="mt-6 w-full"><Link to="/mentors">Find a mentor</Link></Button>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="text-xl font-semibold">Pro</h3>
-              <p className="text-3xl font-bold mt-2">₹899<span className="text-sm text-muted-foreground"> / 60m</span></p>
-              <ul className="mt-4 space-y-1 text-sm text-muted-foreground">
-                <li>Full chat unlock</li>
-                <li>Detailed roadmap PDF</li>
-                <li>Mock interview</li>
-              </ul>
-              <Button asChild className="mt-6 w-full"><Link to="/mentors">Book a mentor</Link></Button>
-            </CardContent>
-          </Card>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Wallet & Recharge</h2>
+        <WalletSection />
       </div>
 
       <div>
