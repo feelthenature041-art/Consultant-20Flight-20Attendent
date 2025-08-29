@@ -12,7 +12,7 @@ export function MentorCard({ m }: { m: Mentor }) {
     <div className="group relative transition-transform duration-200 hover:-translate-y-0.5">
       <Card className="overflow-hidden">
         <CardContent className="p-5">
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex items-center gap-3">
               <Avatar className="size-10 ring-2 ring-white">
                 {m.img && <AvatarImage src={m.img} alt={m.name} />}
@@ -23,7 +23,7 @@ export function MentorCard({ m }: { m: Mentor }) {
                 <p className="text-xs text-muted-foreground truncate">{m.role} {m.company ? `@ ${m.company}` : ""}</p>
               </div>
             </div>
-            <div className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-1 text-xs">
+            <div className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-1 text-xs whitespace-nowrap self-start sm:self-auto shrink-0">
               <BadgeCheck className="size-3 text-success" /> Verified
             </div>
           </div>
