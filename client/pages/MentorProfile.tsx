@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 import { useParams, Link, useSearchParams } from "react-router-dom";
+import { useMemo, useState } from "react";
+import { RechargeDialog } from "@/components/wallet/RechargeDialog";
 import { mentors } from "@/data/mentors";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,6 +16,10 @@ export default function MentorProfile() {
   const [params] = useSearchParams();
   const m = useMemo(() => mentors.find((x) => x.id === id), [id]);
   const teaserChat = params.get("chat") === "teaser";
+  const [promptOpen, setPromptOpen] = useState(false);
+  const [intent, setIntent] = useState<"chat" | "call" | null>(null);
+  const openChat = () => { setIntent("chat"); setPromptOpen(true); };
+  const openCall = () => { setIntent("call"); setPromptOpen(true); };
 
   if (!m) return (
     <section className="container py-16"><p>Mentor not found.</p></section>
@@ -104,16 +110,13 @@ export default function MentorProfile() {
             <div className="text-2xl font-semibold">₹{m.price} <span className="text-sm text-muted-foreground">/ 30m</span></div>
             <div className="text-sm text-muted-foreground">Languages: {m.languages.join(", ")}</div>
             <div className="flex gap-2 pt-2">
-              <Button asChild className="flex-1">
-                <Link to={`/contact?mentor=${m.id}&duration=30`}>Book 30m Call</Link>
-              </Button>
-              <Button asChild variant="secondary" className="flex-1">
-                <Link to={`/contact?mentor=${m.id}&duration=60`}>Book 60m</Link>
-              </Button>
+              <Button className="flex-1" onClick={openCall}>Book 30m Call</Button>
+              <Button variant="secondary" className="flex-1" onClick={openCall}>Book 60m</Button>
             </div>
-            <Button asChild variant="ghost" className="w-full"> 
-              <Link to={`/mentor/${m.id}?chat=${teaserChat ? "full" : "teaser"}`}>{teaserChat ? "Unlock full chat by booking" : "Start Chat (teaser)"}</Link>
+            <Button variant="ghost" className="w-full" onClick={openChat}>
+              {teaserChat ? "Unlock full chat by booking" : "Start Chat (teaser)"}
             </Button>
+            <RechargeDialog open={promptOpen} onOpenChange={setPromptOpen} intent={intent} />
             <Separator />
             <div className="text-xs text-muted-foreground">Mentor verified by Guided</div>
           </CardContent>
