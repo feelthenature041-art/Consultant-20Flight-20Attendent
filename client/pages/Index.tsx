@@ -120,30 +120,15 @@ export default function Index() {
             </div>
           </div>
           <div className="relative">
-            <div className="rounded-2xl border overflow-hidden shadow-[0_10px_30px_-10px_rgba(74,144,226,0.35)]">
-              <div className="relative aspect-video w-full overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/5778230/pexels-photo-5778230.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                  alt="Female flight attendant in uniform inside airplane cabin"
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/20 to-primary/20" />
-                <div className="pointer-events-none absolute -left-10 top-10 h-40 w-40 rounded-full bg-primary/40 blur-3xl opacity-40 [animation:float_8s_ease-in-out_infinite]" />
-                <div className="pointer-events-none absolute -right-8 bottom-8 h-36 w-36 rounded-full bg-warning/50 blur-3xl opacity-40 [animation:float_10s_ease-in-out_infinite]" style={{animationDelay: '1s'}} />
-                <svg aria-hidden className="absolute inset-0 m-auto size-[140%] -translate-x-[20%] text-white/40 mix-blend-overlay [animation:rotate-slow_40s_linear_infinite]" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="0.4">
-                  <circle cx="100" cy="100" r="30" />
-                  <circle cx="100" cy="100" r="60" />
-                  <circle cx="100" cy="100" r="90" />
-                  <line x1="0" y1="100" x2="200" y2="100" />
-                  <line x1="100" y1="0" x2="100" y2="200" />
-                </svg>
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="grid place-items-center rounded-full border bg-white/70 p-6 shadow-sm backdrop-blur">
-                    <div className="text-3xl">✈️</div>
-                    <p className="mt-2 text-xs text-muted-foreground [animation:pulse-soft_3s_ease-in-out_infinite]">Career GPS for cabin crew</p>
-                  </div>
-                </div>
+            <div className="relative mx-auto max-w-md sm:max-w-lg">
+              <div className="absolute inset-0 -z-10 grid place-items-center">
+                <div className="h-56 w-56 sm:h-72 sm:w-72 lg:h-80 lg:w-80 rounded-full bg-primary/20 ring-8 ring-white/80 shadow-inner" />
               </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F728d0307159d4db0b6c1744ba0b9e3d6%2Ff83940476bf04bd08c6032b9114d3885?format=webp&width=800"
+                alt="Professional cabin crew waving"
+                className="relative w-full h-auto object-contain drop-shadow-xl"
+              />
             </div>
           </div>
         </div>
