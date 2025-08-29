@@ -15,6 +15,7 @@ export default function Mentors() {
   const [language, setLanguage] = useState("any");
   const [gender, setGender] = useState("any");
   const [minRating, setMinRating] = useState(0);
+  const [sort, setSort] = useState("top");
 
   const clear = () => {
     setQ("");
