@@ -12,8 +12,14 @@ import { RechargeDialog } from "@/components/wallet/RechargeDialog";
 export function MentorCard({ m }: { m: Mentor }) {
   const [promptOpen, setPromptOpen] = useState(false);
   const [intent, setIntent] = useState<"chat" | "call" | null>(null);
-  const onChat = () => { setIntent("chat"); setPromptOpen(true); };
-  const onCall = () => { setIntent("call"); setPromptOpen(true); };
+  const onChat = () => {
+    setIntent("chat");
+    setPromptOpen(true);
+  };
+  const onCall = () => {
+    setIntent("call");
+    setPromptOpen(true);
+  };
   return (
     <div className="group relative transition-transform duration-200 hover:-translate-y-0.5">
       <Card className="overflow-hidden">
@@ -22,11 +28,18 @@ export function MentorCard({ m }: { m: Mentor }) {
             <div className="flex items-center gap-3">
               <Avatar className="size-10 ring-2 ring-white">
                 {m.img && <AvatarImage src={m.img} alt={m.name} />}
-                <AvatarFallback>{m.name.split(" ").map((n) => n[0]).join("")}</AvatarFallback>
+                <AvatarFallback>
+                  {m.name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </AvatarFallback>
               </Avatar>
               <div className="min-w-0">
                 <p className="font-semibold truncate">{m.name}</p>
-                <p className="text-xs text-muted-foreground truncate">{m.role} {m.company ? `@ ${m.company}` : ""}</p>
+                <p className="text-xs text-muted-foreground truncate">
+                  {m.role} {m.company ? `@ ${m.company}` : ""}
+                </p>
               </div>
             </div>
             <div className="inline-flex items-center gap-1 rounded-full bg-secondary px-2 py-1 text-xs whitespace-nowrap self-start sm:self-auto shrink-0">
@@ -35,22 +48,43 @@ export function MentorCard({ m }: { m: Mentor }) {
           </div>
 
           <div className="mt-3 flex items-center justify-between text-sm">
-            <div className="flex items-center gap-2"><Stars value={m.rating} /><span className="text-muted-foreground">{m.rating.toFixed(1)}</span></div>
-            <div className={"flex items-center gap-2 " + (m.online ? "text-success" : "text-muted-foreground")}>● <span>{m.online ? "Online" : "Offline"}</span></div>
+            <div className="flex items-center gap-2">
+              <Stars value={m.rating} />
+              <span className="text-muted-foreground">
+                {m.rating.toFixed(1)}
+              </span>
+            </div>
+            <div
+              className={
+                "flex items-center gap-2 " +
+                (m.online ? "text-success" : "text-muted-foreground")
+              }
+            >
+              ● <span>{m.online ? "Online" : "Offline"}</span>
+            </div>
           </div>
           <div className="mt-3 flex flex-wrap gap-1.5">
             {m.tags.map((t) => (
-              <Badge key={t} variant="secondary" className="rounded-full">{t}</Badge>
+              <Badge key={t} variant="secondary" className="rounded-full">
+                {t}
+              </Badge>
             ))}
           </div>
           <div className="mt-4 flex items-center justify-between">
-            <p className="text-sm"><span className="font-semibold">₹{m.price}</span> / 30m</p>
+            <p className="text-sm">
+              <span className="font-semibold">₹{m.price}</span> / 30m
+            </p>
             <p className="text-xs text-muted-foreground">{m.years} yrs exp</p>
           </div>
         </CardContent>
       </Card>
       <div className="pointer-events-none absolute inset-0 flex items-end justify-center gap-2 bg-black/0 p-4 opacity-0 transition-all group-hover:pointer-events-auto group-hover:bg-black/40 group-hover:opacity-100">
-        <Button asChild size="sm" variant="secondary" className="pointer-events-auto">
+        <Button
+          asChild
+          size="sm"
+          variant="secondary"
+          className="pointer-events-auto"
+        >
           <Link to={`/mentor/${m.id}`}>View Profile</Link>
         </Button>
         <Button size="sm" className="pointer-events-auto" onClick={onChat}>
@@ -60,7 +94,11 @@ export function MentorCard({ m }: { m: Mentor }) {
           Book Call
         </Button>
       </div>
-      <RechargeDialog open={promptOpen} onOpenChange={setPromptOpen} intent={intent} />
+      <RechargeDialog
+        open={promptOpen}
+        onOpenChange={setPromptOpen}
+        intent={intent}
+      />
     </div>
   );
 }

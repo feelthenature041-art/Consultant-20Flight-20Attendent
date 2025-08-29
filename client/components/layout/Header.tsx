@@ -19,8 +19,14 @@ export function Header() {
     <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-2" aria-label="Guided home">
-            <div className="size-8 rounded-md bg-primary text-primary-foreground grid place-items-center font-bold shadow-sm">G</div>
+          <Link
+            to="/"
+            className="flex items-center gap-2"
+            aria-label="Guided home"
+          >
+            <div className="size-8 rounded-md bg-primary text-primary-foreground grid place-items-center font-bold shadow-sm">
+              G
+            </div>
             <span className="font-semibold text-lg tracking-tight">Guided</span>
           </Link>
         </div>
@@ -32,7 +38,7 @@ export function Header() {
               className={({ isActive }) =>
                 cn(
                   "text-sm text-muted-foreground hover:text-foreground transition-colors",
-                  isActive && "text-foreground"
+                  isActive && "text-foreground",
                 )
               }
             >
@@ -48,7 +54,11 @@ export function Header() {
             <Link to="/contact">Book a Session</Link>
           </Button>
         </div>
-        <button aria-label="Toggle menu" className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-accent" onClick={() => setOpen((v) => !v)}>
+        <button
+          aria-label="Toggle menu"
+          className="md:hidden inline-flex items-center justify-center rounded-md p-2 hover:bg-accent"
+          onClick={() => setOpen((v) => !v)}
+        >
           <Menu className="size-5" />
         </button>
       </div>
@@ -63,7 +73,7 @@ export function Header() {
                 className={({ isActive }) =>
                   cn(
                     "py-2 text-sm text-muted-foreground hover:text-foreground",
-                    isActive && "text-foreground"
+                    isActive && "text-foreground",
                   )
                 }
               >

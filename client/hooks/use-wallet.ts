@@ -4,7 +4,10 @@ const STORAGE_KEY = "guided_wallet_balance";
 
 function readBalance(): number {
   try {
-    const v = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
+    const v =
+      typeof window !== "undefined"
+        ? window.localStorage.getItem(STORAGE_KEY)
+        : null;
     const n = v ? Number(v) : 0;
     return Number.isFinite(n) && n >= 0 ? Math.floor(n) : 0;
   } catch {
@@ -15,7 +18,10 @@ function readBalance(): number {
 function writeBalance(value: number) {
   try {
     if (typeof window !== "undefined") {
-      window.localStorage.setItem(STORAGE_KEY, String(Math.max(0, Math.floor(value))));
+      window.localStorage.setItem(
+        STORAGE_KEY,
+        String(Math.max(0, Math.floor(value))),
+      );
     }
   } catch {
     /* no-op */

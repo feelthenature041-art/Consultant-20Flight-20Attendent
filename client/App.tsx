@@ -30,7 +30,10 @@ const App = () => (
             <Route path="/mentor/:id" element={<MentorProfile />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/pricing" element={<HowItWorks />} />
-            <Route path="/about" element={<Placeholder title="About Guided" />} />
+            <Route
+              path="/about"
+              element={<Placeholder title="About Guided" />}
+            />
             <Route path="/contact" element={<Contact />} />
             <Route path="/terms" element={<Placeholder title="Terms" />} />
             <Route path="/privacy" element={<Placeholder title="Privacy" />} />

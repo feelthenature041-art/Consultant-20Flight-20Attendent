@@ -3,14 +3,26 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Star as StarIcon, BadgeCheck, Wallet, Route, ArrowRight } from "lucide-react";
+import {
+  Star as StarIcon,
+  BadgeCheck,
+  Wallet,
+  Route,
+  ArrowRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Stars } from "@/components/Stars";
 import { DemoResponse } from "@shared/api";
 import { mentors as DATA } from "@/data/mentors";
 import { MentorCard } from "@/components/mentors/MentorCard";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 /* homepage local sample mentors kept earlier is no longer needed */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -78,7 +90,6 @@ const testimonials = [
   },
 ];
 
-
 export default function Index() {
   const [exampleFromServer, setExampleFromServer] = useState("");
   useEffect(() => {
@@ -108,13 +119,20 @@ export default function Index() {
               Talk to professionals. Get your roadmap.
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-prose">
-              Real professionals. Real guidance. Real careers. Chat with flight attendant mentors, book paid 1:1 calls, and leave with an actionable plan.
+              Real professionals. Real guidance. Real careers. Chat with flight
+              attendant mentors, book paid 1:1 calls, and leave with an
+              actionable plan.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild size="lg" data-analytics="cta_hero_browse">
                 <Link to="/mentors">Browse Mentors</Link>
               </Button>
-              <Button asChild variant="secondary" size="lg" data-analytics="cta_hero_book">
+              <Button
+                asChild
+                variant="secondary"
+                size="lg"
+                data-analytics="cta_hero_book"
+              >
                 <Link to="/contact">Book a Session</Link>
               </Button>
             </div>
@@ -157,28 +175,40 @@ export default function Index() {
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="p-6 hover:shadow-md transition-shadow">
             <CardContent className="p-0 flex items-start gap-4">
-              <div className="rounded-lg bg-primary/10 p-2 text-primary"><BadgeCheck className="size-5" /></div>
+              <div className="rounded-lg bg-primary/10 p-2 text-primary">
+                <BadgeCheck className="size-5" />
+              </div>
               <div>
                 <h3 className="font-semibold text-lg">Verified Mentors</h3>
-                <p className="text-muted-foreground text-sm">ID checked, work history verified by Guided.</p>
+                <p className="text-muted-foreground text-sm">
+                  ID checked, work history verified by Guided.
+                </p>
               </div>
             </CardContent>
           </Card>
           <Card className="p-6 hover:shadow-md transition-shadow">
             <CardContent className="p-0 flex items-start gap-4">
-              <div className="rounded-lg bg-success/10 p-2 text-success"><Wallet className="size-5" /></div>
+              <div className="rounded-lg bg-success/10 p-2 text-success">
+                <Wallet className="size-5" />
+              </div>
               <div>
                 <h3 className="font-semibold text-lg">Affordable 1:1</h3>
-                <p className="text-muted-foreground text-sm">Starter pricing from ₹499 for 30 minutes.</p>
+                <p className="text-muted-foreground text-sm">
+                  Starter pricing from ₹499 for 30 minutes.
+                </p>
               </div>
             </CardContent>
           </Card>
           <Card className="p-6 hover:shadow-md transition-shadow">
             <CardContent className="p-0 flex items-start gap-4">
-              <div className="rounded-lg bg-warning/10 p-2 text-warning"><Route className="size-5" /></div>
+              <div className="rounded-lg bg-warning/10 p-2 text-warning">
+                <Route className="size-5" />
+              </div>
               <div>
                 <h3 className="font-semibold text-lg">Actionable Roadmaps</h3>
-                <p className="text-muted-foreground text-sm">Leave each session with a concrete next-steps PDF.</p>
+                <p className="text-muted-foreground text-sm">
+                  Leave each session with a concrete next-steps PDF.
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -190,11 +220,17 @@ export default function Index() {
         <div className="container">
           <div className="flex items-end justify-between mb-6">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Flight Attendant Mentors</h2>
-              <p className="text-muted-foreground">Handpicked experts ready to help.</p>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                Featured Flight Attendant Mentors
+              </h2>
+              <p className="text-muted-foreground">
+                Handpicked experts ready to help.
+              </p>
             </div>
             <Button asChild variant="ghost" className="hidden md:inline-flex">
-              <Link to="/mentors">View all <ArrowRight className="ml-1 size-4" /></Link>
+              <Link to="/mentors">
+                View all <ArrowRight className="ml-1 size-4" />
+              </Link>
             </Button>
           </div>
           <Carousel opts={{ align: "start" }}>
@@ -213,7 +249,9 @@ export default function Index() {
 
       {/* Testimonials */}
       <section className="container py-16 md:py-20">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center">What seekers say</h2>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center">
+          What seekers say
+        </h2>
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <Card key={i} className="p-6">
@@ -237,15 +275,28 @@ export default function Index() {
             <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h3 className="text-2xl font-bold">Ready to get guidance?</h3>
-                <p className="text-primary-foreground/90">Find a mentor you trust and book a 1:1 call today.</p>
+                <p className="text-primary-foreground/90">
+                  Find a mentor you trust and book a 1:1 call today.
+                </p>
                 <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                  <Badge className="bg-white text-foreground hover:bg-white">Mentors verified</Badge>
-                  <Badge className="bg-white text-foreground hover:bg-white">Secure payments</Badge>
-                  <Badge className="bg-white text-foreground hover:bg-white">Refund policy</Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">
+                    Mentors verified
+                  </Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">
+                    Secure payments
+                  </Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">
+                    Refund policy
+                  </Badge>
                 </div>
               </div>
               <div className="flex gap-3">
-                <Button asChild size="lg" variant="secondary" className="text-primary">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="secondary"
+                  className="text-primary"
+                >
                   <Link to="/mentors">Find a mentor</Link>
                 </Button>
                 <Button asChild size="lg">
