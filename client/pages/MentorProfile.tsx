@@ -28,13 +28,13 @@ export default function MentorProfile() {
 
   if (!m)
     return (
-      <section className="container py-16">
+      <section className="container mx-auto max-w-[80%] py-16">
         <p>Mentor not found.</p>
       </section>
     );
 
   return (
-    <section className="container py-10 md:py-16 grid gap-8 lg:grid-cols-[1fr_360px]">
+    <section className="container mx-auto max-w-[80%] py-10 md:py-16 grid gap-8 lg:grid-cols-[1fr_360px]">
       <div>
         <div className="flex flex-wrap items-center gap-3">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
