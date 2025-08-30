@@ -70,7 +70,7 @@ export default function Mentors() {
   }, [q, maxPrice, minYears, availability, language, gender, minRating, sort]);
 
   return (
-    <section className="container mx-auto max-w-[80%] py-10 md:py-16">
+    <section className="container mx-auto max-w-[90%] md:max-w-[80%] py-10 md:py-16">
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">

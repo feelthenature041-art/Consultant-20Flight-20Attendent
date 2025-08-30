@@ -17,7 +17,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container mx-auto max-w-[80%] flex h-16 items-center justify-between">
+      <div className="container mx-auto max-w-[90%] md:max-w-[80%] flex h-16 items-center justify-between">
         <div className="flex items-center gap-3">
           <Link
             to="/"
@@ -61,7 +61,7 @@ export function Header() {
       </div>
       {open && (
         <div className="md:hidden border-t bg-white">
-          <nav className="container mx-auto max-w-[80%] py-2 grid">
+          <nav className="container mx-auto max-w-[90%] md:max-w-[80%] py-2 grid">
             {nav.map((n) => (
               <NavLink
                 key={n.to}

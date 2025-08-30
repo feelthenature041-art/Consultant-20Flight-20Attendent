@@ -9,7 +9,7 @@ export default function Placeholder({
   description?: string;
 }) {
   return (
-    <section className="container mx-auto max-w-[80%] py-24">
+    <section className="container mx-auto max-w-[90%] md:max-w-[80%] py-24">
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
           {title}
