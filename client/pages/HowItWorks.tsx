@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export default function HowItWorks() {
   return (
-    <section className="container mx-auto max-w-[90%] md:max-w-[80%] py-12 md:py-16 space-y-10">
+    <section className="container mx-auto max-w-[96%] md:max-w-[80%] py-12 md:py-16 space-y-10">
       <div className="grid gap-6 md:grid-cols-3">
         <Card>
           <CardContent className="p-6 text-center space-y-2">
