@@ -47,9 +47,6 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-3">
-          <Button asChild variant="ghost" className="hidden lg:inline-flex">
-            <Link to="/mentors">Browse Mentors</Link>
-          </Button>
           <Button asChild>
             <Link to="/contact">Book a Session</Link>
           </Button>
@@ -81,9 +78,6 @@ export function Header() {
               </NavLink>
             ))}
             <div className="flex gap-2 py-2">
-              <Button asChild variant="ghost" className="flex-1">
-                <Link to="/mentors">Browse Mentors</Link>
-              </Button>
               <Button asChild className="flex-1">
                 <Link to="/contact">Book a Session</Link>
               </Button>
