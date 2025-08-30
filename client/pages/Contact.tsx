@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="container mx-auto max-w-[90%] md:max-w-[80%] py-12 md:py-16 grid gap-8 md:grid-cols-2">
+    <section className="container mx-auto max-w-[96%] md:max-w-[80%] py-12 md:py-16 grid gap-8 md:grid-cols-2">
       <div>
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
           Contact / Book
