@@ -71,7 +71,7 @@ export default function Mentors() {
 
   return (
     <section className="container mx-auto max-w-[96%] md:max-w-[80%] py-10 md:py-16">
-      <div className="mb-6 flex items-end justify-between gap-4">
+      <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
             Find a Flight Attendant Mentor
@@ -105,10 +105,10 @@ export default function Mentors() {
             </Badge>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap w-full sm:w-auto">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" className="gap-2">
+              <Button variant="outline" className="gap-2 w-full sm:w-auto">
                 <FilterIcon className="h-4 w-4" />
                 Filters
               </Button>
@@ -237,7 +237,7 @@ export default function Mentors() {
 
           <span className="text-sm text-muted-foreground">Sort</span>
           <Select value={sort} onValueChange={setSort}>
-            <SelectTrigger className="w-40">
+            <SelectTrigger className="w-full sm:w-40">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
