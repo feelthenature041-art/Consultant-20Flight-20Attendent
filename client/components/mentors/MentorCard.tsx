@@ -81,12 +81,12 @@ export function MentorCard({ m }: { m: Mentor }) {
           </div>
         </CardContent>
         <CardFooter className="bg-card p-4 border-t">
-          <div className="w-full flex flex-wrap gap-2">
-            <Button asChild size="sm" variant="secondary">
+          <div className="w-full grid grid-cols-2 gap-2">
+            <Button size="sm" className="w-full" onClick={onChat}>Chat Now</Button>
+            <Button size="sm" className="w-full" onClick={onCall}>Call</Button>
+            <Button asChild size="sm" variant="secondary" className="w-full">
               <Link to={`/mentor/${m.id}`}>View Profile</Link>
             </Button>
-            <Button size="sm" onClick={onChat}>Chat</Button>
-            <Button size="sm" onClick={onCall}>Book Call</Button>
           </div>
         </CardFooter>
       </Card>
