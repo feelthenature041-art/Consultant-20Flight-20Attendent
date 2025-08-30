@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export function Footer() {
   return (
     <footer className="border-t bg-white">
-      <div className="container mx-auto max-w-[90%] md:max-w-[80%] py-10 grid gap-8 md:grid-cols-4">
+      <div className="container mx-auto max-w-[96%] md:max-w-[80%] py-10 grid gap-8 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2">
             <div className="size-8 rounded-md bg-primary text-primary-foreground grid place-items-center font-bold shadow-sm">
@@ -81,7 +81,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t">
-        <div className="container mx-auto max-w-[90%] md:max-w-[80%] py-6 flex items-center justify-between text-xs text-muted-foreground">
+        <div className="container mx-auto max-w-[96%] md:max-w-[80%] py-6 flex items-center justify-between text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Guided. All rights reserved.</p>
           <p>Mentors verified.</p>
         </div>
