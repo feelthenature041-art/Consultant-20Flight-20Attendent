@@ -110,7 +110,7 @@ export default function Index() {
       {/* Hero */}
       <section className="relative border-b">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(138,44,107,0.25),transparent_60%)]" />
-        <div className="container grid items-center gap-10 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
+        <div className="container grid items-center gap-10 pt-20 md:pt-28 pb-0 lg:grid-cols-2 lg:gap-16">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
               <BadgeCheck className="size-3.5" /> Mentors verified by Guided
@@ -137,7 +137,7 @@ export default function Index() {
               </Button>
             </div>
           </div>
-          <div className="relative">
+          <div className="relative self-end">
             <div className="relative mx-auto max-w-[260px] sm:max-w-sm md:max-w-md">
               <div className="absolute inset-0 -z-10 grid place-items-center">
                 <div className="h-40 w-40 sm:h-48 sm:w-48 md:h-56 md:w-56 rounded-full bg-primary/20 ring-6 ring-white/80 shadow-inner" />
