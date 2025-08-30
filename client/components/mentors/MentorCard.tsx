@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Stars } from "@/components/Stars";
 import { Mentor } from "@/data/mentors";
@@ -77,14 +78,16 @@ export function MentorCard({ m }: { m: Mentor }) {
             <p className="text-xs text-muted-foreground">{m.years} yrs exp</p>
           </div>
         </CardContent>
+        <CardFooter className="bg-card p-4 border-t">
+          <div className="w-full flex flex-wrap gap-2">
+            <Button asChild size="sm" variant="secondary">
+              <Link to={`/mentor/${m.id}`}>View Profile</Link>
+            </Button>
+            <Button size="sm" onClick={onChat}>Chat</Button>
+            <Button size="sm" onClick={onCall}>Book Call</Button>
+          </div>
+        </CardFooter>
       </Card>
-      <div className="mt-3 flex gap-2">
-        <Button asChild size="sm" variant="secondary">
-          <Link to={`/mentor/${m.id}`}>View Profile</Link>
-        </Button>
-        <Button size="sm" onClick={onChat}>Chat</Button>
-        <Button size="sm" onClick={onCall}>Book Call</Button>
-      </div>
       <RechargeDialog
         open={promptOpen}
         onOpenChange={setPromptOpen}
