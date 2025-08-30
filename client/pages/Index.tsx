@@ -120,13 +120,24 @@ export default function Index() {
                   Find a mentor you trust and book a 1:1 call today.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                  <Badge className="bg-white text-foreground hover:bg-white">Mentors verified</Badge>
-                  <Badge className="bg-white text-foreground hover:bg-white">Secure payments</Badge>
-                  <Badge className="bg-white text-foreground hover:bg-white">Refund policy</Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">
+                    Mentors verified
+                  </Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">
+                    Secure payments
+                  </Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">
+                    Refund policy
+                  </Badge>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full md:w-auto">
-                <Button asChild size="lg" variant="secondary" className="text-primary w-full sm:w-auto">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="secondary"
+                  className="text-primary w-full sm:w-auto"
+                >
                   <Link to="/mentors">Find a mentor</Link>
                 </Button>
                 <Button asChild size="lg" className="w-full sm:w-auto">
@@ -308,7 +319,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
 
       <p className="sr-only">{exampleFromServer}</p>
     </div>
