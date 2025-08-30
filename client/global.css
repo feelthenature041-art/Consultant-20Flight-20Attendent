@@ -22,7 +22,7 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Guided brand - Onion palette */
-    --primary: 320 48% 45%;
+    --primary: 222 72% 55%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
@@ -31,13 +31,13 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 320 40% 96%;
-    --accent-foreground: 320 50% 30%;
+    --accent: 222 100% 97%;
+    --accent-foreground: 222 47% 20%;
 
-    --success: 133 45% 35%; /* scallion green */
+    --success: 142 45% 35%; /* professional green */
     --success-foreground: 0 0% 100%;
 
-    --warning: 38 100% 52%; /* warm amber */
+    --warning: 35 100% 52%; /* professional amber */
     --warning-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -45,13 +45,13 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 320 48% 45%;
+    --ring: 222 72% 55%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 320 48% 45%;
+    --sidebar-primary: 222 72% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
@@ -69,7 +69,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 212 72% 59%;
+    --primary: 222 72% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -92,10 +92,10 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 320 48% 45%;
+    --ring: 222 72% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 320 48% 45%;
+    --sidebar-primary: 222 72% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
