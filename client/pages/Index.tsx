@@ -111,9 +111,9 @@ export default function Index() {
       {/* Closing banner */}
       <section className="py-8 md:py-10 bg-muted/10 border-b">
         <div className="container mx-auto max-w-[96%] md:max-w-[80%]">
-          <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-primary to-primary/80 p-8 text-primary-foreground shadow-lg">
+          <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-primary to-primary/80 p-6 sm:p-8 text-primary-foreground shadow-lg">
             <div className="absolute -right-16 -top-16 size-64 rounded-full bg-white/10 blur-2xl" />
-            <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+            <div className="relative z-10 grid gap-4 sm:gap-6 md:grid-cols-[1fr_auto] md:items-center">
               <div>
                 <h3 className="text-2xl font-bold">Ready to get guidance?</h3>
                 <p className="text-primary-foreground/90">
@@ -125,11 +125,11 @@ export default function Index() {
                   <Badge className="bg-white text-foreground hover:bg-white">Refund policy</Badge>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <Button asChild size="lg" variant="secondary" className="text-primary">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full md:w-auto">
+                <Button asChild size="lg" variant="secondary" className="text-primary w-full sm:w-auto">
                   <Link to="/mentors">Find a mentor</Link>
                 </Button>
-                <Button asChild size="lg">
+                <Button asChild size="lg" className="w-full sm:w-auto">
                   <Link to="/contact">Book a 30-min Call</Link>
                 </Button>
               </div>
