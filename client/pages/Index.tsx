@@ -23,6 +23,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { CarouselDots } from "@/components/ui/carousel";
 
 /* homepage local sample mentors kept earlier is no longer needed */
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -248,6 +249,9 @@ export default function Index() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
+          <div className="mt-4 flex justify-center">
+            <CarouselDots />
+          </div>
         </div>
       </section>
 
