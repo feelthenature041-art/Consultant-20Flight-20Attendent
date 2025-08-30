@@ -110,116 +110,109 @@ export default function Mentors() {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-4">
-        <div className="rounded-xl border p-4 space-y-4 h-fit">
-          <Input
-            placeholder="Search by name, airline, skill"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-          />
-
-          <div>
-            <p className="text-sm font-medium">Price (max ₹/30m)</p>
-            <div className="pt-2">
-              <Slider
-                min={0}
-                max={100}
-                step={1}
-                value={[maxPrice]}
-                onValueChange={(v) => setMaxPrice(v[0])}
+      <div className="space-y-6">
+        <div className="rounded-xl border p-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start">
+            <div className="md:col-span-2 lg:col-span-3 xl:col-span-4">
+              <Input
+                placeholder="Search by name, airline, skill"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
               />
-              <div className="mt-1 text-xs text-muted-foreground">
-                Up to ₹{maxPrice}
+            </div>
+
+            <div>
+              <p className="text-sm font-medium">Price (max ₹/30m)</p>
+              <div className="pt-2">
+                <Slider
+                  min={0}
+                  max={100}
+                  step={1}
+                  value={[maxPrice]}
+                  onValueChange={(v) => setMaxPrice(v[0])}
+                />
+                <div className="mt-1 text-xs text-muted-foreground">Up to ₹{maxPrice}</div>
               </div>
             </div>
-          </div>
 
-          <div>
-            <p className="text-sm font-medium">Experience (min years)</p>
-            <div className="pt-2">
-              <Slider
-                min={0}
-                max={20}
-                step={1}
-                value={[minYears]}
-                onValueChange={(v) => setMinYears(v[0])}
-              />
-              <div className="mt-1 text-xs text-muted-foreground">
-                {minYears}+ years
+            <div>
+              <p className="text-sm font-medium">Experience (min years)</p>
+              <div className="pt-2">
+                <Slider
+                  min={0}
+                  max={20}
+                  step={1}
+                  value={[minYears]}
+                  onValueChange={(v) => setMinYears(v[0])}
+                />
+                <div className="mt-1 text-xs text-muted-foreground">{minYears}+ years</div>
               </div>
             </div>
-          </div>
 
-          <div>
-            <p className="text-sm font-medium">Availability</p>
-            <Select
-              value={availability}
-              onValueChange={(v) => setAvailability(v as any)}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Any" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">Any</SelectItem>
-                <SelectItem value="online">Online now</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+            <div>
+              <p className="text-sm font-medium">Availability</p>
+              <Select value={availability} onValueChange={(v) => setAvailability(v as any)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Any" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="any">Any</SelectItem>
+                  <SelectItem value="online">Online now</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
 
-          <div>
-            <p className="text-sm font-medium">Language</p>
-            <Select value={language} onValueChange={setLanguage}>
-              <SelectTrigger>
-                <SelectValue placeholder="Any" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">Any</SelectItem>
-                <SelectItem value="English">English</SelectItem>
-                <SelectItem value="Hindi">Hindi</SelectItem>
-                <SelectItem value="Arabic">Arabic</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+            <div>
+              <p className="text-sm font-medium">Language</p>
+              <Select value={language} onValueChange={setLanguage}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Any" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="any">Any</SelectItem>
+                  <SelectItem value="English">English</SelectItem>
+                  <SelectItem value="Hindi">Hindi</SelectItem>
+                  <SelectItem value="Arabic">Arabic</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
 
-          <div>
-            <p className="text-sm font-medium">Gender</p>
-            <Select value={gender} onValueChange={setGender}>
-              <SelectTrigger>
-                <SelectValue placeholder="Any" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="any">Any</SelectItem>
-                <SelectItem value="Female">Female</SelectItem>
-                <SelectItem value="Male">Male</SelectItem>
-                <SelectItem value="Other">Other</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+            <div>
+              <p className="text-sm font-medium">Gender</p>
+              <Select value={gender} onValueChange={setGender}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Any" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="any">Any</SelectItem>
+                  <SelectItem value="Female">Female</SelectItem>
+                  <SelectItem value="Male">Male</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
 
-          <div>
-            <p className="text-sm font-medium">Rating (min)</p>
-            <div className="pt-2">
-              <Slider
-                min={0}
-                max={5}
-                step={0.5}
-                value={[minRating]}
-                onValueChange={(v) => setMinRating(v[0])}
-              />
-              <div className="mt-1 text-xs text-muted-foreground">
-                {minRating}+
+            <div>
+              <p className="text-sm font-medium">Rating (min)</p>
+              <div className="pt-2">
+                <Slider
+                  min={0}
+                  max={5}
+                  step={0.5}
+                  value={[minRating]}
+                  onValueChange={(v) => setMinRating(v[0])}
+                />
+                <div className="mt-1 text-xs text-muted-foreground">{minRating}+</div>
               </div>
             </div>
-          </div>
 
-          <div className="pt-2 flex gap-2">
-            <Button variant="secondary" onClick={clear} className="flex-1">
-              Clear filters
-            </Button>
+            <div className="md:col-span-2 lg:col-span-3 xl:col-span-4 pt-2 flex gap-2 justify-end">
+              <Button variant="secondary" onClick={clear}>Clear filters</Button>
+            </div>
           </div>
         </div>
 
-        <div className="md:col-span-3">
+        <div>
           {filtered.length === 0 ? (
             <div className="rounded-xl border p-10 text-center text-sm text-muted-foreground">
               <div className="mx-auto mb-3 size-12 rounded-full bg-primary/10 grid place-items-center">
