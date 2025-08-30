@@ -248,10 +248,10 @@ export default function Index() {
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
+            <div className="mt-4 flex justify-center">
+              <CarouselDots />
+            </div>
           </Carousel>
-          <div className="mt-4 flex justify-center">
-            <CarouselDots />
-          </div>
         </div>
       </section>
 
