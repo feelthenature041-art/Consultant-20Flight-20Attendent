@@ -277,7 +277,11 @@ const CarouselDots = React.forwardRef<
   if (!api || count <= 1) return null;
 
   return (
-    <div ref={ref} className={cn("flex items-center gap-2", className)} {...props}>
+    <div
+      ref={ref}
+      className={cn("flex items-center gap-2", className)}
+      {...props}
+    >
       {Array.from({ length: count }).map((_, i) => (
         <button
           key={i}
@@ -285,7 +289,7 @@ const CarouselDots = React.forwardRef<
           aria-label={`Go to slide ${i + 1}`}
           className={cn(
             "h-2.5 w-2.5 rounded-full transition-colors",
-            selectedIndex === i ? "bg-primary" : "bg-muted"
+            selectedIndex === i ? "bg-primary" : "bg-muted",
           )}
           onClick={() => api?.scrollTo(i)}
         />

@@ -156,67 +156,67 @@ export default function Index() {
       {/* Steps */}
       <section className="py-12 md:py-16 bg-muted/20 border-y">
         <div className="container mx-auto max-w-[80%]">
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <div className="rounded-lg bg-success/10 p-4 text-center">
-            <p className="text-xs text-muted-foreground">Step 1</p>
-            <p className="font-medium">Choose Mentor</p>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="rounded-lg bg-success/10 p-4 text-center">
+              <p className="text-xs text-muted-foreground">Step 1</p>
+              <p className="font-medium">Choose Mentor</p>
+            </div>
+            <div className="rounded-lg bg-primary/10 p-4 text-center">
+              <p className="text-xs text-muted-foreground">Step 2</p>
+              <p className="font-medium">Book & Pay</p>
+            </div>
+            <div className="rounded-lg bg-warning/10 p-4 text-center">
+              <p className="text-xs text-muted-foreground">Step 3</p>
+              <p className="font-medium">Get Roadmap</p>
+            </div>
           </div>
-          <div className="rounded-lg bg-primary/10 p-4 text-center">
-            <p className="text-xs text-muted-foreground">Step 2</p>
-            <p className="font-medium">Book & Pay</p>
-          </div>
-          <div className="rounded-lg bg-warning/10 p-4 text-center">
-            <p className="text-xs text-muted-foreground">Step 3</p>
-            <p className="font-medium">Get Roadmap</p>
-          </div>
-        </div>
         </div>
       </section>
 
       {/* Why it works */}
       <section className="py-16 md:py-20 bg-muted/10 border-t">
         <div className="container mx-auto max-w-[80%]">
-        <div className="grid gap-6 md:grid-cols-3">
-          <Card className="p-6 hover:shadow-md transition-shadow">
-            <CardContent className="p-0 flex items-start gap-4">
-              <div className="rounded-lg bg-primary/10 p-2 text-primary">
-                <BadgeCheck className="size-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg">Verified Mentors</h3>
-                <p className="text-muted-foreground text-sm">
-                  ID checked, work history verified by Guided.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="p-6 hover:shadow-md transition-shadow">
-            <CardContent className="p-0 flex items-start gap-4">
-              <div className="rounded-lg bg-success/10 p-2 text-success">
-                <Wallet className="size-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg">Affordable 1:1</h3>
-                <p className="text-muted-foreground text-sm">
-                  Starter pricing from ₹499 for 30 minutes.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="p-6 hover:shadow-md transition-shadow">
-            <CardContent className="p-0 flex items-start gap-4">
-              <div className="rounded-lg bg-warning/10 p-2 text-warning">
-                <Route className="size-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg">Actionable Roadmaps</h3>
-                <p className="text-muted-foreground text-sm">
-                  Leave each session with a concrete next-steps PDF.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="p-6 hover:shadow-md transition-shadow">
+              <CardContent className="p-0 flex items-start gap-4">
+                <div className="rounded-lg bg-primary/10 p-2 text-primary">
+                  <BadgeCheck className="size-5" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">Verified Mentors</h3>
+                  <p className="text-muted-foreground text-sm">
+                    ID checked, work history verified by Guided.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="p-6 hover:shadow-md transition-shadow">
+              <CardContent className="p-0 flex items-start gap-4">
+                <div className="rounded-lg bg-success/10 p-2 text-success">
+                  <Wallet className="size-5" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">Affordable 1:1</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Starter pricing from ₹499 for 30 minutes.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="p-6 hover:shadow-md transition-shadow">
+              <CardContent className="p-0 flex items-start gap-4">
+                <div className="rounded-lg bg-warning/10 p-2 text-warning">
+                  <Route className="size-5" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg">Actionable Roadmaps</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Leave each session with a concrete next-steps PDF.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -258,22 +258,24 @@ export default function Index() {
       {/* Testimonials */}
       <section className="py-16 md:py-20 bg-muted/20 border-y">
         <div className="container mx-auto max-w-[80%]">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center">
-          What seekers say
-        </h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Card key={i} className="p-6">
-              <div className="flex items-center gap-2 text-warning">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <StarIcon key={j} className="size-4 fill-current" />
-                ))}
-              </div>
-              <p className="mt-4 text-sm text-muted-foreground">“{t.quote}”</p>
-              <p className="mt-3 text-sm font-medium">{t.name}</p>
-            </Card>
-          ))}
-        </div>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center">
+            What seekers say
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <Card key={i} className="p-6">
+                <div className="flex items-center gap-2 text-warning">
+                  {Array.from({ length: t.rating }).map((_, j) => (
+                    <StarIcon key={j} className="size-4 fill-current" />
+                  ))}
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  “{t.quote}”
+                </p>
+                <p className="mt-3 text-sm font-medium">{t.name}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 

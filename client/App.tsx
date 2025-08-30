@@ -20,28 +20,25 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Index />} />
-            <Route path="/mentors" element={<Mentors />} />
-            <Route path="/mentor/:id" element={<MentorProfile />} />
-            <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/pricing" element={<Wallet />} />
-            <Route
-              path="/about"
-              element={<Placeholder title="About Guided" />}
-            />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/terms" element={<Placeholder title="Terms" />} />
-            <Route path="/privacy" element={<Placeholder title="Privacy" />} />
-            <Route path="/refunds" element={<Placeholder title="Refunds" />} />
-            {/* CATCH-ALL */}
-            <Route path="*" element={<NotFound />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+    <Sonner />
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Index />} />
+          <Route path="/mentors" element={<Mentors />} />
+          <Route path="/mentor/:id" element={<MentorProfile />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/pricing" element={<Wallet />} />
+          <Route path="/about" element={<Placeholder title="About Guided" />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Placeholder title="Terms" />} />
+          <Route path="/privacy" element={<Placeholder title="Privacy" />} />
+          <Route path="/refunds" element={<Placeholder title="Refunds" />} />
+          {/* CATCH-ALL */}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </QueryClientProvider>
 );
 
