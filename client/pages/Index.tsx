@@ -109,7 +109,7 @@ export default function Index() {
   return (
     <div className="bg-white">
       {/* Closing banner */}
-      <section className="py-14 bg-muted/10 border-b">
+      <section className="py-8 md:py-10 bg-muted/10 border-b">
         <div className="container mx-auto max-w-[96%] md:max-w-[80%]">
           <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-primary to-primary/80 p-8 text-primary-foreground shadow-lg">
             <div className="absolute -right-16 -top-16 size-64 rounded-full bg-white/10 blur-2xl" />
@@ -141,7 +141,7 @@ export default function Index() {
       {/* Hero */}
       <section className="relative border-b">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(138,44,107,0.25),transparent_60%)]" />
-        <div className="container mx-auto max-w-[96%] md:max-w-[80%] grid items-center gap-10 pt-20 md:pt-28 pb-0 lg:grid-cols-2 lg:gap-16">
+        <div className="container mx-auto max-w-[96%] md:max-w-[80%] grid items-center gap-6 pt-10 md:pt-16 pb-0 lg:grid-cols-2 lg:gap-12">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
               <BadgeCheck className="size-3.5" /> Mentors verified by Guided
