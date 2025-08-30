@@ -78,21 +78,12 @@ export function MentorCard({ m }: { m: Mentor }) {
           </div>
         </CardContent>
       </Card>
-      <div className="pointer-events-none absolute inset-0 flex items-end justify-center gap-2 bg-black/0 p-4 opacity-0 transition-all group-hover:pointer-events-auto group-hover:bg-black/40 group-hover:opacity-100">
-        <Button
-          asChild
-          size="sm"
-          variant="secondary"
-          className="pointer-events-auto"
-        >
+      <div className="mt-3 flex gap-2">
+        <Button asChild size="sm" variant="secondary">
           <Link to={`/mentor/${m.id}`}>View Profile</Link>
         </Button>
-        <Button size="sm" className="pointer-events-auto" onClick={onChat}>
-          Chat
-        </Button>
-        <Button size="sm" className="pointer-events-auto" onClick={onCall}>
-          Book Call
-        </Button>
+        <Button size="sm" onClick={onChat}>Chat</Button>
+        <Button size="sm" onClick={onCall}>Book Call</Button>
       </div>
       <RechargeDialog
         open={promptOpen}
