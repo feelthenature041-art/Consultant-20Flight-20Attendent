@@ -84,7 +84,7 @@ export function MentorCard({ m }: { m: Mentor }) {
           <div className="w-full grid grid-cols-2 gap-2">
             <Button size="sm" className="w-full" onClick={onChat}>Chat Now</Button>
             <Button size="sm" className="w-full" onClick={onCall}>Call</Button>
-            <Button asChild size="sm" variant="secondary" className="w-full">
+            <Button asChild size="sm" variant="secondary" className="w-full col-span-2">
               <Link to={`/mentor/${m.id}`}>View Profile</Link>
             </Button>
           </div>
