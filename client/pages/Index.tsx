@@ -108,6 +108,36 @@ export default function Index() {
 
   return (
     <div className="bg-white">
+      {/* Closing banner */}
+      <section className="py-14 bg-muted/10 border-b">
+        <div className="container mx-auto max-w-[96%] md:max-w-[80%]">
+          <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-primary to-primary/80 p-8 text-primary-foreground shadow-lg">
+            <div className="absolute -right-16 -top-16 size-64 rounded-full bg-white/10 blur-2xl" />
+            <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+              <div>
+                <h3 className="text-2xl font-bold">Ready to get guidance?</h3>
+                <p className="text-primary-foreground/90">
+                  Find a mentor you trust and book a 1:1 call today.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                  <Badge className="bg-white text-foreground hover:bg-white">Mentors verified</Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">Secure payments</Badge>
+                  <Badge className="bg-white text-foreground hover:bg-white">Refund policy</Badge>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <Button asChild size="lg" variant="secondary" className="text-primary">
+                  <Link to="/mentors">Find a mentor</Link>
+                </Button>
+                <Button asChild size="lg">
+                  <Link to="/contact">Book a 30-min Call</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero */}
       <section className="relative border-b">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(138,44,107,0.25),transparent_60%)]" />
@@ -279,46 +309,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Closing banner */}
-      <section className="py-14 bg-muted/10 border-t">
-        <div className="container mx-auto max-w-[96%] md:max-w-[80%]">
-          <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-primary to-primary/80 p-8 text-primary-foreground shadow-lg">
-            <div className="absolute -right-16 -top-16 size-64 rounded-full bg-white/10 blur-2xl" />
-            <div className="relative z-10 grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
-              <div>
-                <h3 className="text-2xl font-bold">Ready to get guidance?</h3>
-                <p className="text-primary-foreground/90">
-                  Find a mentor you trust and book a 1:1 call today.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                  <Badge className="bg-white text-foreground hover:bg-white">
-                    Mentors verified
-                  </Badge>
-                  <Badge className="bg-white text-foreground hover:bg-white">
-                    Secure payments
-                  </Badge>
-                  <Badge className="bg-white text-foreground hover:bg-white">
-                    Refund policy
-                  </Badge>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Button
-                  asChild
-                  size="lg"
-                  variant="secondary"
-                  className="text-primary"
-                >
-                  <Link to="/mentors">Find a mentor</Link>
-                </Button>
-                <Button asChild size="lg">
-                  <Link to="/contact">Book a 30-min Call</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <p className="sr-only">{exampleFromServer}</p>
     </div>
