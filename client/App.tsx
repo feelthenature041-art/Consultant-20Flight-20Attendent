@@ -13,6 +13,7 @@ import Placeholder from "@/pages/Placeholder";
 import Mentors from "@/pages/Mentors";
 import MentorProfile from "@/pages/MentorProfile";
 import HowItWorks from "@/pages/HowItWorks";
+import Wallet from "@/pages/Wallet";
 import Contact from "@/pages/Contact";
 
 const queryClient = new QueryClient();
@@ -29,7 +30,7 @@ const App = () => (
             <Route path="/mentors" element={<Mentors />} />
             <Route path="/mentor/:id" element={<MentorProfile />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/pricing" element={<HowItWorks />} />
+            <Route path="/pricing" element={<Wallet />} />
             <Route
               path="/about"
               element={<Placeholder title="About Guided" />}
