@@ -108,7 +108,7 @@ export default function Index() {
   return (
     <div className="bg-white">
       {/* Hero */}
-      <section className="relative">
+      <section className="relative border-b">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(138,44,107,0.25),transparent_60%)]" />
         <div className="container grid items-center gap-10 py-20 md:py-28 lg:grid-cols-2 lg:gap-16">
           <div>
@@ -153,7 +153,8 @@ export default function Index() {
       </section>
 
       {/* Steps */}
-      <section className="container py-12 md:py-16">
+      <section className="py-12 md:py-16 bg-muted/20 border-y">
+        <div className="container">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           <div className="rounded-lg bg-success/10 p-4 text-center">
             <p className="text-xs text-muted-foreground">Step 1</p>
@@ -168,10 +169,12 @@ export default function Index() {
             <p className="font-medium">Get Roadmap</p>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Why it works */}
-      <section className="container py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-muted/10 border-t">
+        <div className="container">
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="p-6 hover:shadow-md transition-shadow">
             <CardContent className="p-0 flex items-start gap-4">
@@ -213,10 +216,11 @@ export default function Index() {
             </CardContent>
           </Card>
         </div>
+        </div>
       </section>
 
       {/* Featured Mentors */}
-      <section className="bg-gradient-to-b from-white to-primary/5 py-16 md:py-20">
+      <section className="bg-gradient-to-b from-white to-primary/5 py-16 md:py-20 border-y">
         <div className="container">
           <div className="flex items-end justify-between mb-6">
             <div>
@@ -248,7 +252,8 @@ export default function Index() {
       </section>
 
       {/* Testimonials */}
-      <section className="container py-16 md:py-20">
+      <section className="py-16 md:py-20 bg-muted/20 border-y">
+        <div className="container">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-center">
           What seekers say
         </h2>
@@ -265,10 +270,11 @@ export default function Index() {
             </Card>
           ))}
         </div>
+        </div>
       </section>
 
       {/* Closing banner */}
-      <section className="py-14">
+      <section className="py-14 bg-muted/10 border-t">
         <div className="container">
           <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-primary to-primary/80 p-8 text-primary-foreground shadow-lg">
             <div className="absolute -right-16 -top-16 size-64 rounded-full bg-white/10 blur-2xl" />
