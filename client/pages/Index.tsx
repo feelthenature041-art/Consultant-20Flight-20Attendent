@@ -151,7 +151,7 @@ export default function Index() {
 
       {/* Hero */}
       <section className="relative border-b">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(138,44,107,0.25),transparent_60%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_-10%,rgba(37,99,235,0.22),transparent_60%)]" />
         <div className="container mx-auto max-w-[96%] md:max-w-[80%] grid items-center gap-6 pt-10 md:pt-16 pb-0 lg:grid-cols-2 lg:gap-12">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
