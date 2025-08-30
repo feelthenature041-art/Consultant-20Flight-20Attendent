@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { mentors as DATA, Mentor } from "@/data/mentors";
 import { MentorCard } from "@/components/mentors/MentorCard";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Filter as FilterIcon } from "lucide-react";
 
 export default function Mentors() {
   const [q, setQ] = useState("");
@@ -96,6 +98,106 @@ export default function Mentors() {
           </div>
         </div>
         <div className="flex items-center gap-2">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" className="gap-2">
+                <FilterIcon className="h-4 w-4" />
+                Filters
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="sm:max-w-md">
+              <SheetHeader>
+                <SheetTitle>Filters</SheetTitle>
+                <SheetDescription>Refine your search.</SheetDescription>
+              </SheetHeader>
+              <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-2">
+                <div className="md:col-span-2">
+                  <Input
+                    placeholder="Search by name, airline, skill"
+                    value={q}
+                    onChange={(e) => setQ(e.target.value)}
+                  />
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium">Price (max ₹/30m)</p>
+                  <div className="pt-2">
+                    <Slider min={0} max={100} step={1} value={[maxPrice]} onValueChange={(v) => setMaxPrice(v[0])} />
+                    <div className="mt-1 text-xs text-muted-foreground">Up to ₹{maxPrice}</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium">Experience (min years)</p>
+                  <div className="pt-2">
+                    <Slider min={0} max={20} step={1} value={[minYears]} onValueChange={(v) => setMinYears(v[0])} />
+                    <div className="mt-1 text-xs text-muted-foreground">{minYears}+ years</div>
+                  </div>
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium">Availability</p>
+                  <Select value={availability} onValueChange={(v) => setAvailability(v as any)}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Any" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="any">Any</SelectItem>
+                      <SelectItem value="online">Online now</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium">Language</p>
+                  <Select value={language} onValueChange={setLanguage}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Any" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="any">Any</SelectItem>
+                      <SelectItem value="English">English</SelectItem>
+                      <SelectItem value="Hindi">Hindi</SelectItem>
+                      <SelectItem value="Arabic">Arabic</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium">Gender</p>
+                  <Select value={gender} onValueChange={setGender}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Any" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="any">Any</SelectItem>
+                      <SelectItem value="Female">Female</SelectItem>
+                      <SelectItem value="Male">Male</SelectItem>
+                      <SelectItem value="Other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <p className="text-sm font-medium">Rating (min)</p>
+                  <div className="pt-2">
+                    <Slider min={0} max={5} step={0.5} value={[minRating]} onValueChange={(v) => setMinRating(v[0])} />
+                    <div className="mt-1 text-xs text-muted-foreground">{minRating}+</div>
+                  </div>
+                </div>
+
+                <div className="md:col-span-2 pt-2 flex gap-2 justify-end">
+                  <SheetClose asChild>
+                    <Button variant="secondary" onClick={clear}>Clear</Button>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <Button>Apply</Button>
+                  </SheetClose>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+
           <span className="text-sm text-muted-foreground">Sort</span>
           <Select value={sort} onValueChange={setSort}>
             <SelectTrigger className="w-40">
@@ -111,7 +213,7 @@ export default function Mentors() {
       </div>
 
       <div className="space-y-6">
-        <div className="rounded-xl border p-4">
+        <div className="rounded-xl border p-4 hidden">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 items-start">
             <div className="md:col-span-2 lg:col-span-3 xl:col-span-4">
               <Input
